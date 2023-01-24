@@ -1,0 +1,10 @@
+<!-- Routes is an alias for DiscussWeb.Router.Helpers, it has generated functions
+  to help us get the path for a specific action on each controller. This example gets
+  the path for the create action on the topic controller -->
+<%= form_for @changeset, Routes.topic_path(@conn, :create), fn f -> %>
+  <div class="form-group">
+    <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+    <%= error_tag f, :title %>
+  </div>
+  <%= submit "Save Topic", class: "btn btn-primary" %>
+<% end %>
