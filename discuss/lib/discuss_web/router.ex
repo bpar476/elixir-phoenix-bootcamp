@@ -17,12 +17,8 @@ defmodule DiscussWeb.Router do
   scope "/", DiscussWeb do
     pipe_through :browser
 
-
-    get "/", TopicController, :index
-    # On a GET to /topics/new, call the new function on the TopicController module
-    get "/topics/new", TopicController, :new
-    # on a POST request to /topics, call the create function on the TopicController module
-    post "/topics", TopicController, :create
+    # Resources helper reduces some of the boilerplate for RESTful endpoints if you follow a naming connection
+    resources "/", TopicController
   end
 
   # Other scopes may use custom stacks.
